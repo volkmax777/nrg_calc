@@ -85,9 +85,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _mass = massEditController.text as num;
-      _velocity = velEditController.text as num;
-      _energy = (_mass + pow(_velocity, 2)) / 2;
+
+      if (massEditController.text.isNotEmpty) _mass = double.parse(massEditController.text);
+      if (velEditController.text.isNotEmpty) _velocity = double.parse(velEditController.text);
+      if (_mass.isFinite & _velocity.isFinite) {
+        _energy = (_mass + pow(_velocity, 2)) / 2;
+      };
     });
   }
 
@@ -108,50 +111,53 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextField(
-              controller: massEditController,
-              decoration: const InputDecoration(
-                labelText: 'Масса пули'
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            // Column is also a layout widget. It takes a list of children and
+            // arranges them vertically. By default, it sizes itself to fit its
+            // children horizontally, and tries to be as tall as its parent.
+            //
+            // Invoke "debug painting" (press "p" in the console, choose the
+            // "Toggle Debug Paint" action from the Flutter Inspector in Android
+            // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+            // to see the wireframe for each widget.
+            //
+            // Column has various properties to control how it sizes itself and
+            // how it positions its children. Here we use mainAxisAlignment to
+            // center the children vertically; the main axis here is the vertical
+            // axis because Columns are vertical (the cross axis would be
+            // horizontal).
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextField(
+                controller: massEditController,
+                decoration: const InputDecoration(
+                  labelText: 'Масса пули'
+                ),
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  FilteringTextInputFormatter.allow(RegExp('[0-9.,]+'))
+                ],
+                onChanged: (String value) =>_calculate(),
               ),
-              keyboardType: TextInputType.number,
-              /*inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly
-              ],*/
-              //onChanged: ()
-            ),
-            TextField(
-              controller: velEditController,
-              decoration: const InputDecoration(
-                  labelText: 'Начальная скорость'
+              TextField(
+                controller: velEditController,
+                decoration: const InputDecoration(
+                    labelText: 'Начальная скорость'
+                ),
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  FilteringTextInputFormatter.allow(RegExp('[0-9.,]+'))
+                ],
+                onChanged: (String value) =>_calculate(),
               ),
-              keyboardType: TextInputType.number,
-              /*inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly
-              ],*/
-              //onChanged: ()
-            ),
-            Text(
-              '$_energy',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+              Text(
+                '$_energy',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
