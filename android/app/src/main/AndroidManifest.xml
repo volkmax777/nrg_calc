@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.nrg_calc">
+    package="com.volkmax.nrg_calc">
    <application
         android:label="nrg_calc"
         android:icon="@mipmap/nrgcalc">
