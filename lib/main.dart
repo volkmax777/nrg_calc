@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
       if (velEditController.text.isNotEmpty) _velocity = double.parse(velEditController.text);
       if (_mass.isFinite & _velocity.isFinite) {
         _energy = (_mass + pow(_velocity, 2)) / 2;
-      };
+      }
     });
   }
 
