@@ -2,7 +2,7 @@
     package="com.example.nrg_calc">
    <application
         android:label="nrg_calc"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/nrgcalc">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
