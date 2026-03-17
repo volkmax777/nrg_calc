@@ -1,4 +1,4 @@
-package com.example.bullet_nrg
+package ru.volkmax.bullet_nrg
 
 import io.flutter.embedding.android.FlutterActivity
 
