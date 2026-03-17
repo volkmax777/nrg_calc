@@ -43,7 +43,7 @@ jobs:
             echo "Error: KEYSTORE_BASE64 secret is empty!"
             exit 1
           fi
-          echo -n "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/upload-keystore.jks
+          printf '%s' "${{ secrets.KEYSTORE_BASE64 }}" | tr -d '\r\n\t ' | base64 --decode --ignore-garbage > android/app/upload-keystore.jks
 
       - name: Create key.properties
         run: |
