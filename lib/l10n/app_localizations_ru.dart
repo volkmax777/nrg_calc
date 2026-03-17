@@ -9,7 +9,7 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get appTitle => 'Баллистический калькулятор';
+  String get appTitle => 'Калькулятор дульной энергии';
 
   @override
   String get history => 'Архив расчетов';
