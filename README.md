@@ -1,63 +1,65 @@
-# Nrg Calc (Дж Кальк)
+# Nrg Calc (Joule Calc)
 
-**Nrg Calc** — это минималистичный и удобный баллистический калькулятор, предназначенный для мгновенного расчета дульной кинетической энергии пули. Приложение идеально подходит для стрелков, охотников и любителей оружия, которым нужна быстрая конвертация и просчет данных прямо на стрельбище.
+[Читать на русском](README_RU.md)
+
+**Nrg Calc** is a minimalist and user-friendly ballistic calculator designed for instantaneous calculation of muzzle kinetic energy. The application is perfect for shooters, hunters, and firearm enthusiasts who need quick conversion and data calculation right at the range.
 
 <p align="center">
   <img src="assets/icon/icon.png" width="150" alt="App Icon">
 </p>
 
-## Основные возможности 🚀
+## Key Features 🚀
 
-- **Мгновенный расчет `On-the-fly`**: Забудьте про кнопки "Рассчитать", результаты обновляются в реальном времени при вводе.
-- **Две системы измерений**:
-  - Масса: **Граммы (г)** или **Граны (gr)**
-  - Скорость: **Метры в секунду (м/с)** или **Футы в секунду (fps)**
-- **Двойной вывод энергии**: Основной результат в **Джоулях (Дж)**, с дублированием в **Футо-фунтах (ft-lbf)**.
-- **Умная классификация калибра**: В зависимости от полученных джоулей, калькулятор подскажет ориентировочный класс оружия (Пневматика, Пистолет, Винтовка, Магнум и т.д.).
-- **Архив расчетов**: Возможность сохранять удачные результаты стрельбы. Данные надежно хранятся локально на устройстве (благодаря SQLite / SharedPreferences).
-- **"Тактический" дизайн**: Темная тема с оранжевыми акцентами не слепит глаза и отлично выглядит в полевых условиях.
-- **Мультиязычность**: Полная поддержка русского и английского языков (автоматически адаптируется под систему).
+- **Instant `On-the-fly` Calculation**: Forget "Calculate" buttons; results update in real-time as you type.
+- **Two Measurement Systems**:
+  - Mass: **Grams (g)** or **Grains (gr)**
+  - Velocity: **Meters per second (m/s)** or **Feet per second (fps)**
+- **Dual Energy Output**: Primary result in **Joules (J)**, with a secondary display in **Foot-pounds (ft-lbf)**.
+- **Smart Caliber Classification**: Based on the calculated joules, the calculator suggests the approximate weapon class (Pneumatics, Pistol, Rifle, Magnum, etc.).
+- **Calculation Archive**: Ability to save successful shooting results. Data is securely stored locally on the device (using SharedPreferences).
+- **"Tactical" Design**: A dark theme with orange accents that is easy on the eyes and looks great in field conditions.
+- **Multi-language Support**: Full support for Russian and English (automatically adapts to system settings).
 
-## Формула расчета 🧮
+## Calculation Formula 🧮
 
-В основе лежит классическая формула кинетической энергии:
+It is based on the classic kinetic energy formula:
 
 $$E = \frac{m \cdot v^2}{2}$$
 
-Где:
-- $E$ — энергия (в Джоулях)
-- $m$ — масса (в килограммах, перевод из граммов автоматический)
-- $v$ — скорость (в метрах в секунду)
+Where:
+- $E$ — energy (in Joules)
+- $m$ — mass (in kilograms, automatically converted from grams)
+- $v$ — velocity (in meters per second)
 
-## Сборка и установка 🛠
+## Build and Installation 🛠
 
-Проект написан на **Flutter** (Dart) и поддерживает сборку под Android и iOS.
+The project is written in **Flutter** (Dart) and supports building for Android and iOS.
 
-### Требования
-- Установленный и работающий [Flutter SDK](https://flutter.dev/docs/get-started/install)
-- Android Studio / Xcode для сборки под конкретные платформы
+### Requirements
+- Installed and functional [Flutter SDK](https://flutter.dev/docs/get-started/install)
+- Android Studio / Xcode for platform-specific builds
 
-### Запуск в режиме разработки:
+### Development Mode Run:
 
 ```bash
-# Клонирование репозитория
-git clone <ваш URL>
+# Clone the repository
+git clone <your URL>
 cd nrg_calc
 
-# Установка зависимостей
+# Install dependencies
 flutter pub get
 
-# Запуск приложения на присоединенном устройстве или эмуляторе
+# Run the app on a connected device or emulator
 flutter run
 ```
 
-### Сборка релизного APK (Android):
+### Build Release APK (Android):
 
 ```bash
 flutter build apk --release
 ```
-P.S. Собранный APK файл вы сможете найти по пути: `build/app/outputs/flutter-apk/app-release.apk`
+P.S. You can find the built APK file at: `build/app/outputs/flutter-apk/app-release.apk`
 
-## Авторство ✨
+## Authorship ✨
 
-Это приложение было спроектировано и полностью написано с нуля искусственным интеллектом **[Antigravity](https://deepmind.google/)** — продвинутым AI-ассистентом для написания кода, созданным командой Google DeepMind.
+This application was designed and written entirely from scratch by **[Antigravity](https://deepmind.google/)** — an advanced AI coding assistant created by the Google DeepMind team.
