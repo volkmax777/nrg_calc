@@ -1,8 +1,8 @@
-# Nrg Calc (Joule Calc)
+# BulletNRG
 
 [Читать на русском](README_RU.md)
 
-**Nrg Calc** is a minimalist and user-friendly ballistic calculator designed for instantaneous calculation of muzzle kinetic energy. The application is perfect for shooters, hunters, and firearm enthusiasts who need quick conversion and data calculation right at the range.
+**BulletNRG** is a minimalist and user-friendly ballistic calculator designed for instantaneous calculation of muzzle kinetic energy. The application is perfect for shooters, hunters, and firearm enthusiasts who need quick conversion and data calculation right at the range.
 
 <p align="center">
   <img src="assets/icon/icon.png" width="150" alt="App Icon">
@@ -44,7 +44,7 @@ The project is written in **Flutter** (Dart) and supports building for Android a
 ```bash
 # Clone the repository
 git clone <your URL>
-cd nrg_calc
+cd bullet_nrg
 
 # Install dependencies
 flutter pub get

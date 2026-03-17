@@ -5,7 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'l10n/app_localizations.dart';
 
 void main() {
-  runApp(const NrgCalcApp());
+  runApp(const BulletNrgApp());
 }
 
 // Модель для сохранения в архив с методами сериализации
@@ -50,8 +50,8 @@ class CalculationRecord {
       );
 }
 
-class NrgCalcApp extends StatelessWidget {
-  const NrgCalcApp({super.key});
+class BulletNrgApp extends StatelessWidget {
+  const BulletNrgApp({super.key});
 
   @override
   Widget build(BuildContext context) {
